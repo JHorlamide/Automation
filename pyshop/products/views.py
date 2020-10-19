@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Product
 
 
 # Create your views here.
@@ -11,7 +12,12 @@ from django.shortcuts import render
 # http://127.0.0.1:8000/products, to index function
 # ==================================================
 def index(request):
-    return HttpResponse("Hello Olamide, keep learning.")
+    products = Product.objects.all()
+    return render(
+        request,
+        'index.html',
+        {'products': products}
+    )
 
 
 def get_new_products(request):
