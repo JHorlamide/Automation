@@ -10,9 +10,13 @@
 <body>
     <h1>Products</h1>
     <ul>
-        <li>Item 1</li>
-        <li>Item 1</li>
-        <li>Item 1</li>
+        {% for product in products %}
+            <li>
+                {{ product.name }}:
+                ${{ product.price }}
+            </li>
+            <img src={product.image_url} alt="">
+        {% endfor %}
     </ul>
     <form action="">
         <input type="text" placeholder="First name" maxlength="6">
