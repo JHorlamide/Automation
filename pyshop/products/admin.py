@@ -8,11 +8,11 @@ from . models import Offer
 # 2:- Customizing ourt Offer table in the admin area: (OfferAdmin)
 # ====================================================================
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'stock')
+    list_display = ('name', 'price', 'stock', 'image_url')
 
 
 class OfferAdmin(admin.ModelAdmin):
-    list_display = ('code', 'discount')
+    list_display = ('code', 'discount', 'description')
 
 
 # Register your models here.
